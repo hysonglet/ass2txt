@@ -62,7 +62,12 @@ fn main() {
             // println!("{}", &line);
             let split: Vec<&str> = line.split(",").collect();
 
-            let sub = split.get(9).clone().unwrap();
+            // let sub = split.get(9).clone().unwrap();
+            let mut sub: String = String::new();
+            for i in 9..split.len() {
+                sub.push_str(split[i]);
+            }
+
             let mut sub = sub.to_string();
 
             if sub.starts_with(r"{") || sub.starts_with(r"[") {
